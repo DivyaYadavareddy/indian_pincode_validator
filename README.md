@@ -1,35 +1,39 @@
-# indian_pincode_validator
-Indian Pincode Validator – Flutter/Dart Package
+<!-- 
+This README describes the package. If you publish this package to pub.dev,
+this README's contents appear on the landing page for your package.
 
-A lightweight and easy-to-use Flutter/Dart package to validate Indian PIN codes with proper formatting, length checks, and real-time verification.
-The package also returns city and state information for valid PIN codes.
+For information about how to write a good package README, see the guide for
+[writing package pages](https://dart.dev/tools/pub/writing-package-pages). 
 
-✅ Features
+For general information about developing packages, see the Dart guide for
+[creating packages](https://dart.dev/guides/libraries/create-packages)
+and the Flutter guide for
+[developing packages and plugins](https://flutter.dev/to/develop-packages). 
+-->
 
-Validate pincode length (6 digits)
+TODO: Put a short description of the package here that helps potential users
+know whether this package might be useful for them.
 
-Validate format (numeric only)
+## Features
 
-Check whether the pincode actually exists
+TODO: List what your package can do. Maybe include images, gifs, or videos.
 
-Get city and state for valid pincodes
+## Getting started
 
-Simple API → easy to integrate into all Flutter forms
+TODO: List prerequisites and provide or point to information on how to
+start using the package.
 
-🧪 Example
-final result = await IndianPincodeValidator.validate("500062");
+## Usage
 
-if (result.isValid) {
-  print("City: ${result.city}");
-  print("State: ${result.state}");
-} else {
-  print("Invalid pincode");
-}
+TODO: Include short and useful examples for package users. Add longer examples
+to `/example` folder. 
 
-📍 Coming Soon
+```dart
+const like = 'sample';
+```
 
-Offline pincode database
+## Additional information
 
-Pincode auto-suggestions
-
-District lookup
+TODO: Tell users more about the package: where to find more information, how to 
+contribute to the package, how to file issues, what response they can expect 
+from the package authors, and more.
