@@ -30,6 +30,15 @@ class PincodeValidationResult {
 }
 
 /// Main utility class for Indian PIN code validation
+///
+/// Usage:
+/// ```dart
+/// final result = await IndianPincodeValidator.validate('560103');
+/// if (result.isValid) {
+///   print(result.city);
+///   print(result.state);
+/// }
+/// ```
 class IndianPinCodeValidator {
   // 6 digits, cannot start with 0
   static final RegExp _formatRegex = RegExp(r'^[1-9][0-9]{5}$');

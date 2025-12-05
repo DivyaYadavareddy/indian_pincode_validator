@@ -1,32 +1,49 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+## Demo
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages). 
+![Demo](example/demo.gif)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages). 
--->
+# indian_pincode_validator
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A lightweight and easy-to-use Dart/Flutter package to validate **Indian PIN Codes**.  
+It checks **length**, **format**, detects **fake patterns**, verifies **real PIN codes** using the official Postal API, and returns **city & state** information.
+
+Perfect for Flutter forms, address validation, KYC screens, and signup flows.
+
+---
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+✔ Validate Indian PIN code structure (6 digits, cannot start with 0)  
+✔ Detect invalid or obvious fake patterns (`111111`, `123456`, `101010`, etc.)  
+✔ Verify real PIN codes via the Indian Postal API  
+✔ Fetch and return **city** and **state**  
+✔ Simple and clean API  
+✔ Works in both **Dart** & **Flutter** apps  
+✔ Optional: Pass your own HTTP client for testing  
+✔ Fully typed result model (`PincodeValidationResult`)
+
+---
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+
+Add the package to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  indian_pincode_validator: ^0.0.1
+```  
+``` Then run
+   dart pub get 
+```
+``` Import the package:
+   import 'package:indian_pincode_validator/indian_pincode_validator.dart';
+```
+   
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+final result = await IndianPincodeValidator.validate('560103');
 
 ```dart
 const like = 'sample';
@@ -34,6 +51,21 @@ const like = 'sample';
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+🛠 Contributing
+
+Contributions are welcome!
+Feel free to open issues or submit pull requests for:
+
+new features
+
+bug fixes
+
+performance improvements
+
+🐞 Reporting issues
+
+If you encounter any issues, please file them on the GitHub issue tracker.
+
+❤️ Support
+
+If this package saved you time, consider giving it a ⭐ on GitHub or sharing it with others!
