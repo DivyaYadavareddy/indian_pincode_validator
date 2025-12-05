@@ -1,5 +1,3 @@
-library indian_pincode_validator;
-
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -88,10 +86,10 @@ class IndianPinCodeValidator {
   ///
   /// Uses: https://api.postalpincode.in/pincode/{pin}
   static Future<PincodeValidationResult> validate(
-      String pin, {
-        http.Client? client,
-        bool rejectObviousFakes = true,
-      }) async {
+    String pin, {
+    http.Client? client,
+    bool rejectObviousFakes = true,
+  }) async {
     final trimmed = pin.trim();
 
     // 1) Basic format check
@@ -164,7 +162,8 @@ class IndianPinCodeValidator {
         );
       }
 
-      final city = (po['District'] ?? po['Block'] ?? po['Name'] ?? '').toString();
+      final city =
+          (po['District'] ?? po['Block'] ?? po['Name'] ?? '').toString();
       final state = (po['State'] ?? '').toString();
 
       if (city.isEmpty && state.isEmpty) {
@@ -188,10 +187,11 @@ class IndianPinCodeValidator {
       );
     } finally {
       // Do NOT close `client` if it was passed from outside
-      if (client is http.Client) {
-        // if you really want to auto-close only when created internally,
-        // you can track that with a flag instead.
-      }
+      // if (client is http.Client) {
+      //   client.close();
+      //   // if you really want to auto-close only when created internally,
+      //   // you can track that with a flag instead.
+      // }
     }
   }
 }

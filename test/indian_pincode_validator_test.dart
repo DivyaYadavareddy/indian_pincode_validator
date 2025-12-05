@@ -23,8 +23,10 @@ void main() {
 
     test('validate returns success for valid PIN from API', () async {
       final mockClient = MockClient((req) async {
-        expect(req.url.toString(),
-            equals('https://api.postalpincode.in/pincode/560103'));
+        expect(
+          req.url.toString(),
+          equals('https://api.postalpincode.in/pincode/560103'),
+        );
 
         final body = jsonEncode([
           {
@@ -34,9 +36,9 @@ void main() {
                 "Name": "Bellandur",
                 "District": "Bengaluru",
                 "State": "Karnataka",
-              }
-            ]
-          }
+              },
+            ],
+          },
         ]);
 
         return http.Response(body, 200);
@@ -55,10 +57,7 @@ void main() {
     test('validate returns invalid for API error', () async {
       final mockClient = MockClient((req) async {
         final body = jsonEncode([
-          {
-            "Status": "Error",
-            "Message": "No records found",
-          }
+          {"Status": "Error", "Message": "No records found"},
         ]);
         return http.Response(body, 200);
       });
@@ -86,4 +85,3 @@ void main() {
     });
   });
 }
-

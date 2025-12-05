@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.0.1
+## 1.0.0
 
 - Initial release of `indian_pincode_validator`
 - Added pincode format validation (6 digits, cannot start with 0)
